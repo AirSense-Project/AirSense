@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🌍 Estaciones de Calidad del Aire - AirSense</title>
+
+  <!-- Estilos de Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Tu hoja de estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🌍 Estaciones de Calidad del Aire</h1>
+
+    <label for="selectMunicipio">Selecciona un municipio:</label>
+    <select id="selectMunicipio">
+      <option value="">-- Selecciona un municipio --</option>
+    </select>
+
+    
+    <div id="map"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
