@@ -15,7 +15,9 @@
   "author": "katherine Lopez",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^5.1.0",
+    "i": "^0.3.7",
     "leaflet": "^1.9.4",
     "pg": "^8.16.3"
   }

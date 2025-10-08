@@ -8,7 +8,9 @@ const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static("public"));
+
+// ✅ Servir los archivos del frontend (carpeta public)
+app.use(express.static(path.join(__dirname, "../public")));
 
 // ----------------------------------------------------------------------
 // RUTAS API
@@ -46,9 +48,7 @@ app.get("/api/municipios", async (req, res) => {
   }
 });
 
-// -------------------------------------------------------------
-// 🔹 RUTA 2: Obtener estaciones con coordenadas reales
-// -------------------------------------------------------------
+// 🔹 Estaciones por municipio
 app.get("/api/estaciones/:id_municipio", async (req, res) => {
   const { id_municipio } = req.params;
   try {
@@ -71,10 +71,12 @@ app.get("/api/estaciones/:id_municipio", async (req, res) => {
     res.status(500).send("Error al obtener estaciones");
   }
 });
-//-------------------------------------------------------------
-// 🔹 Inicialización del servidor
-// -------------------------------------------------------------
+
+// ✅ Servir el index.html por defecto
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
+});
+
 app.listen(PORT, () => {
   console.log(`✅ Servidor activo en: http://localhost:${PORT}`);
 });
-
